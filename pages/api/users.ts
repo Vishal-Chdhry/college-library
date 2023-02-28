@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next/types';
+import * as argon from 'argon2';
 
 const prisma = new PrismaClient();
 
@@ -22,15 +23,19 @@ export default async function handler(
 
 async function addUser(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body;
+  const hash = await argon.hash(body.password);
   try {
     const newEntry = await prisma.user.create({
       data: {
         name: body.name,
+        username: body.username,
+        password: hash,
         rollNo: body.rollNo,
         startYear: body.startYear,
         endYear: body.endYear,
         semester: body.semester,
-        branch: body.branch
+        branch: body.branch,
+        role: body.role
       }
     });
     return res.status(200).json(newEntry);
@@ -44,6 +49,7 @@ async function getUsers(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body;
   try {
     const users = await prisma.user.findMany();
+    users.forEach((u) => (u.password = '--retracted--'));
     return res.status(200).json(users);
   } catch (error) {
     console.error('Request error', error);

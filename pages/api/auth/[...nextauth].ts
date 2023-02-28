@@ -1,5 +1,6 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { server } from '../../../lib/utils';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -10,7 +11,7 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials, req) {
-        const res = await fetch('/your/endpoint', {
+        const res = await fetch(`${server}/auth/login`, {
           method: 'POST',
           body: JSON.stringify(credentials),
           headers: { 'Content-Type': 'application/json' }

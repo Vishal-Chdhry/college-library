@@ -11,12 +11,15 @@ datasource db {
 
 model User {
   id        Int    @id @default(autoincrement())
+  username  String
   name      String
+  password  String
   rollNo    String
   startYear Int
   endYear   Int
   branch    String
   semester  Int
+  role      String
 }
 
 model Book {

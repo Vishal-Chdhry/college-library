@@ -21,14 +21,17 @@ async function getUserById(req: NextApiRequest, res: NextApiResponse) {
   const id = parseInt(query.id as string, 10);
 
   try {
-    const books = await prisma.user.findFirst({
+    const user = await prisma.user.findFirst({
       where: {
         id
       }
     });
-    return res.status(200).json(books);
+    if (user) {
+      user.password = '--retracted--';
+    }
+    return res.status(200).json(user);
   } catch (error) {
     console.error('Request error', error);
-    res.status(500).json({ error: 'Wrong book id', success: false });
+    res.status(500).json({ error: 'Wrong User id', success: false });
   }
 }
