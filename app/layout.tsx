@@ -3,8 +3,8 @@ import '@tremor/react/dist/esm/tremor.css';
 
 import Nav from './nav';
 import AnalyticsWrapper from './analytics';
-import Toast from './toast';
 import { Suspense } from 'react';
+import { SessionProvider } from 'next-auth/react';
 
 export const metadata = {
   title: 'Next.js 13 + PlanetScale + NextAuth + Tailwind CSS',
@@ -16,6 +16,7 @@ export default async function RootLayout({
   children
 }: {
   children: React.ReactNode;
+  session: any;
 }) {
   return (
     <html lang="en" className="h-full bg-gray-50">
@@ -26,7 +27,6 @@ export default async function RootLayout({
         </Suspense>
         {children}
         <AnalyticsWrapper />
-        <Toast />
       </body>
     </html>
   );

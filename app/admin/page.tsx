@@ -75,7 +75,7 @@ const categories: {
   }
 ];
 
-export default function PlaygroundPage() {
+export default function AdminPage() {
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
       <ColGrid numColsSm={2} numColsLg={3} gapX="gap-x-6" gapY="gap-y-6">
