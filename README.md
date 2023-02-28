@@ -12,3 +12,5 @@ This is a college library using the following stack:
 - Analytics - [Vercel Analytics](https://vercel.com/analytics)
 - Linting - [ESLint](https://eslint.org)
 - Formatting - [Prettier](https://prettier.io)
+
+
