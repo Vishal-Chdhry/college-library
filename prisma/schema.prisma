@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id        Int    @id @default(autoincrement())
+  name      String
+  rollNo    String
+  startYear Int
+  endYear   Int
+  branch    String
+  semester  Int
+}
+
+model Book {
+  id        Int      @id @default(autoincrement())
+  title     String
+  author    String
+  branch    String
+  semester  Int
+  imageUrl  String
+  addedDate DateTime
+  userId    Int?
+}
+
+model Transactions {
+  id        Int      @id @default(autoincrement())
+  time      DateTime
+  bookId    Int
+  userId    Int
+  confirmed Boolean
+}
