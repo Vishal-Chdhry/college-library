@@ -3,7 +3,7 @@ const products = [
   {
     id: 1,
     name: 'Harry Potter and the Chamber of Secrets',
-    href: '#',
+    href: '/books/test',
     imageSrc:
       'https://media.harrypotterfanzone.com/chamber-of-secrets-uk-childrens-edition-2014.jpg',
     imageAlt: "Front of men's Book in black.",
@@ -13,7 +13,7 @@ const products = [
   {
     id: 1,
     name: 'The Gravity of Us',
-    href: '#',
+    href: '/books/test',
     imageSrc:
       'https://assets.teenvogue.com/photos/5cd4384fac4d9e712fe2ebb0/2:3/w_1852,h_2778,c_limit/The%20Gravity%20of%20Us_.jpg',
     imageAlt: "Front of men's Book in black.",
@@ -23,7 +23,7 @@ const products = [
   {
     id: 1,
     name: 'Follow me to ground',
-    href: '#',
+    href: '/books/test',
     imageSrc:
       'https://s26162.pcdn.co/wp-content/uploads/2019/12/46301955-668x1024.jpg',
     imageAlt: "Front of men's Book in black.",
@@ -33,7 +33,7 @@ const products = [
   {
     id: 1,
     name: 'Red Planet',
-    href: '#',
+    href: '/books/test',
     imageSrc:
       'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/02/attachment_70356173-e1488218242409.jpg',
     imageAlt: "Front of men's Book in black.",

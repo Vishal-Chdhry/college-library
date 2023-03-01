@@ -1,6 +1,5 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { server } from '../../../lib/utils';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -11,7 +10,7 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials, req) {
-        const res = await fetch(`${server}/auth/login`, {
+        const res = await fetch(`http://localhost:3000/api/auth/login`, {
           method: 'POST',
           body: JSON.stringify(credentials),
           headers: { 'Content-Type': 'application/json' }
@@ -34,8 +33,8 @@ export const authOptions: NextAuthOptions = {
       return session;
     }
   },
-  session: { strategy: 'jwt' },
-  pages: { signIn: '/signin' }
+  session: { strategy: 'jwt' }
+  // pages: { signIn: '/signin' }
 };
 
 export default NextAuth(authOptions);

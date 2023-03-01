@@ -9,15 +9,15 @@ const product = {
       alt: ''
     },
     {
-      src: 'https://media.harrypotterfanzone.com/chamber-of-secrets-uk-childrens-edition-2014.jpg',
+      src: 'https://m.media-amazon.com/images/I/91OINeHnJGL.jpg',
       alt: ''
     },
     {
-      src: 'https://media.harrypotterfanzone.com/chamber-of-secrets-uk-childrens-edition-2014.jpg',
+      src: 'https://m.media-amazon.com/images/I/510CXXt9CqL.jpg',
       alt: ''
     },
     {
-      src: 'https://media.harrypotterfanzone.com/chamber-of-secrets-uk-childrens-edition-2014.jpg',
+      src: 'https://media.harrypotterfanzone.com/chamber-of-secrets-us-childrens-edition-2013.jpg',
       alt: ''
     }
   ],

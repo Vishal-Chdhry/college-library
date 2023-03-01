@@ -10,17 +10,12 @@ export default withAuth(
       req.nextauth.token?.role != 'admin'
     )
       return NextResponse.rewrite(new URL('/auth/signin', req.url));
-    if (
-      req.nextUrl.pathname.startsWith('/user') &&
-      req.nextauth.token?.role != 'user'
-    )
-      return NextResponse.rewrite(new URL('/auth/signin', req.url));
   },
   {
     callbacks: { authorized: ({ token }) => !!token }
   }
 );
 export const config = {
-  matcher: []
-  // matcher: ['/admin/:path*', '/user/:path*']
+  // matcher: []
+  matcher: ['/admin/:path*', '/user/:path*']
 };

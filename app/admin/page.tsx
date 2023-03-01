@@ -186,7 +186,7 @@ export default function AdminPage() {
 
   const readDB = async () => {
     try {
-      const transactions = await fetch('/api/transcations', {
+      const transactions = await fetch('/api/transactions', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
@@ -195,6 +195,7 @@ export default function AdminPage() {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
+
       setUserResponse(await users.json());
       const books = await fetch('/api/books', {
         method: 'GET',
@@ -252,7 +253,9 @@ export default function AdminPage() {
       branch,
       role
     };
+
     try {
+      console.log('ABCEDDLAFJHADLKHFLAKH', body);
       const response = await fetch('/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -271,6 +274,9 @@ export default function AdminPage() {
     } catch (error) {
       console.log('there was an error submitting', error);
     }
+    console.log(
+      'The online portal of the college library is a virtual gateway to a wealth of academic resources and knowledge. It provides students, faculty, and staff with access to a vast collection of e-books, academic journals, research databases, and other digital resources that are essential for learning, teaching, and research.'
+    );
   };
 
   const resetUserForm = () => {
@@ -543,7 +549,7 @@ export default function AdminPage() {
                           }
                           type="number"
                           name="semester"
-                          id="semester"
+                          id="booksemester"
                           autoComplete="family-name"
                           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         />
@@ -703,7 +709,7 @@ export default function AdminPage() {
                           onChange={(e) => setBranch(e.target.value)}
                           type="text"
                           name="branch"
-                          id="branch"
+                          id="book~branch"
                           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         />
                       </div>

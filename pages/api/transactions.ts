@@ -60,7 +60,7 @@ async function updateTransaction(req: NextApiRequest, res: NextApiResponse) {
         id: body.id
       },
       data: {
-        confirmed: body.confirmed
+        confirmed: true
       }
     });
     return res.status(200).json(book);
