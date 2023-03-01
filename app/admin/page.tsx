@@ -155,6 +155,21 @@ const categories: {
   }
 ];
 
+const users = [
+  {
+    name: 'Vishal',
+    rollNo: '20530'
+  },
+  {
+    name: 'Vishal',
+    rollNo: '20528'
+  },
+  {
+    name: 'Rohit',
+    rollNo: '20530'
+  }
+];
+
 export default function AdminPage() {
   const [bookTitle, setBookTitle] = useState('');
   const [bookAuthor, setBookAuthor] = useState('');
@@ -179,7 +194,20 @@ export default function AdminPage() {
   const [transactionResponse, setTransactionResponse] = useState(null);
   const [bookResponse, setBookResponse] = useState(null);
   const [userResponse, setUserResponse] = useState(null);
-
+  const [users, setUsers] = useState([
+    {
+      name: 'Vishal',
+      rollNo: '20530'
+    },
+    {
+      name: 'Vishal',
+      rollNo: '20528'
+    },
+    {
+      name: 'Rohit',
+      rollNo: '20530'
+    }
+  ]);
   useEffect(() => {
     readDB();
   }, []);
@@ -261,6 +289,7 @@ export default function AdminPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
+      setUsers([...users, { name, rollNo }]);
       if (response.status !== 200) {
         console.log('something went wrong');
         //set an error banner here
@@ -393,15 +422,12 @@ export default function AdminPage() {
             <Title>Search Users</Title>
             <TextInput placeholder="Search..." />
             <List>
-              {cities
-                .filter((c) => c.city.startsWith(''))
-                .slice(0, 5)
-                .map((item) => (
-                  <ListItem>
-                    <span>{item.city}</span>
-                    <span>{item.rating}</span>
-                  </ListItem>
-                ))}
+              {users.slice(0, 5).map((item) => (
+                <ListItem>
+                  <span>{item.name}</span>
+                  <span>{item.rollNo}</span>
+                </ListItem>
+              ))}
             </List>
           </Card>
           <Card maxWidth="max-w-7xl" hFull={false}>
@@ -557,13 +583,13 @@ export default function AdminPage() {
                     </div>
                   </div>
                   <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                    <button
+                    <a
                       type="submit"
                       className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       onSubmit={handleBookSubmit}
                     >
                       Add Book
-                    </button>
+                    </a>
                   </div>
                 </div>
               </form>

@@ -25,7 +25,7 @@ const product = {
     'Author: JK Rowling',
     'Branch: CSE',
     'Semester: 5',
-    'Added On: 5th September'
+    'Added On: 5/9/22'
   ]
 };
 
