@@ -30,7 +30,7 @@ async function addBook(req: NextApiRequest, res: NextApiResponse) {
         branch: body.branch,
         semester: body.semester,
         imageUrl: body.imageUrl,
-        userId: !!body.userId ? body.userId : null,
+        userId: !!body.userId || body.userId === -1 ? null : body.userId,
         addedDate: new Date()
       }
     });
