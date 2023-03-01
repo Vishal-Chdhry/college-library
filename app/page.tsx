@@ -28,13 +28,13 @@ export default function Home() {
         </svg>
       </div>
       <main>
-        <div className="relative px-6 lg:px-8 -z-10">
+        <div className="relative px-6 lg:px-8 -z-10 backdrop-blur-md bg-no-repeat bg-cover bg-[url('https://c4.wallpaperflare.com/wallpaper/479/101/113/germany-saxony-gorlitz-hall-historical-literature-wallpaper-preview.jpg')]">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Unlock Your Potential with the Power of Knowledge
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
+              <p className="mt-6 text-lg leading-8 text-stone-200">
                 The online portal of the college library is a virtual gateway to
                 a wealth of academic resources and knowledge. It provides
                 students, faculty, and staff with access to a vast collection of
@@ -51,7 +51,7 @@ export default function Home() {
                 </a>
                 <a
                   href="/signin"
-                  className="text-sm font-semibold leading-6 text-gray-900"
+                  className="text-sm font-semibold leading-6 text-white"
                 >
                   Sign In <span aria-hidden="true">→</span>
                 </a>
